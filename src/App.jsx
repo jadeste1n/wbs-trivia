@@ -5,6 +5,7 @@ import {
 	Route,
 	RouterProvider,
 } from "react-router-dom";
+import {MyProvider} from './context/contextProvider'
 
 import "./App.css";
 import Root from "./pages/root";
@@ -24,7 +25,11 @@ function App() {
 		)
 	);
 
-	return <RouterProvider router={router} />;
+	return (
+    <MyProvider>
+      <RouterProvider router={router} />
+    </MyProvider>
+)
 }
 
 export default App;
