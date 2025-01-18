@@ -28,23 +28,27 @@ const Quiz = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		//for Testing:
+		//for
 		setFormAnswers(JSON.parse(localStorage.getItem("qas"))); // get questions and answer object
 		console.log(formAnswers);
 
 		
+
+		/*
         // test if all question have selection, otherwise throw error + show where
 		const allQuestions = document.getElementsByClassName('question-container');// get all the questions container in the page
 		console.log(allQuestions)
 		//get all Input Fields of each question and an check if checked > 0 
 		Array.from(allQuestions).forEach((question) => {
 			for (let a = 0 ; a < 5; a++ ) { //for each child element get the input 
-				const answers = question.children[a].children[0].checked //fo each child Element get the input field checked value			
+				const answers = question.children[a].children[0].checked //fo each child Element get the input field checked value
+´				
 			}
 			//if all false -> remove hidden class from element with class ux-class in particular group
 			//if one true -> push to array formAnswers as givenAnswer: 'value' where question is xy
 		})
 		//let 
+		*/
 		
 
 		//if all have selection: save each answer in local storage and give score if correct

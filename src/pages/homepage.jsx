@@ -1,15 +1,13 @@
 import { fetchCategories } from "../utils/fetchCategories";
 import { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import DefaultContext from '../context/contextProvider'
+import DefaultContext from "../context/contextProvider";
 
 const Home = () => {
-
-    //context
-    const { formData, setFormData} = useContext(DefaultContext);  // Access context
+	//context
+	const { formData, setFormData } = useContext(DefaultContext); // Access context
 	//states
 	const [categories, setCategories] = useState([]); // State to hold fetched categories
-	
 
 	useEffect(() => {
 		// fetch categories on mount
@@ -42,7 +40,7 @@ const Home = () => {
 		e.preventDefault(); // Prevent page reload
 
 		console.log("Form Submitted:", formData); //testing
-        
+
 		//go to quiz page
 		navigate("/quiz");
 	};
