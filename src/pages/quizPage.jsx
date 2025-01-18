@@ -4,7 +4,7 @@ import { fetchQuestions } from "../utils/fetchQuestions";
 import QA from "../components/q+a";
 
 const Quiz = () => {
-	const { formData, qas, setQAs } = useContext(DefaultContext); // Access context for fetch
+	const { formData, qas, setQAs, formAnswers , setFormAnswers} = useContext(DefaultContext); // Access context for fetch
 	const category = formData.category;
 	const difficulty = formData.difficulty;
 
@@ -28,8 +28,8 @@ const Quiz = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-
-		let formAnswers = JSON.parse(localStorage.getItem("qas")); // get questions and answer object
+		//for Testing:
+		setFormAnswers(JSON.parse(localStorage.getItem("qas"))); // get questions and answer object
 		console.log(formAnswers);
 
 		
@@ -39,8 +39,7 @@ const Quiz = () => {
 		//get all Input Fields of each question and an check if checked > 0 
 		Array.from(allQuestions).forEach((question) => {
 			for (let a = 0 ; a < 5; a++ ) { //for each child element get the input 
-				const answers = question.children[a].children[0].checked //fo each child Element get the input field checked value
-´				
+				const answers = question.children[a].children[0].checked //fo each child Element get the input field checked value			
 			}
 			//if all false -> remove hidden class from element with class ux-class in particular group
 			//if one true -> push to array formAnswers as givenAnswer: 'value' where question is xy
@@ -51,6 +50,7 @@ const Quiz = () => {
 		//if all have selection: save each answer in local storage and give score if correct
 
 		//navigate to results page
+		//navigate("/result");
 	};
 
 	return (

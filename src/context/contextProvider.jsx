@@ -8,6 +8,7 @@ export const MyProvider = ({children}) => {
 		difficulty: "all",
 	});
     const [qas, setQAs] = useState([]); // State to hold fetched q&a's
+    const [formAnswers, setFormAnswers] = useState([]) // state to hold qas + user answers
     
 
     return(
